@@ -1,0 +1,40 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class MyClass {
+    static int n=20;
+    static char [] stack = new char[n];
+    static int temp=-1;
+    static void push(char ele){
+        if(temp>n-1){
+            System.out.println("Overflow Stack!");
+        }else{
+            
+            stack[++temp] = ele;
+            System.out.println("Push element is\t"+stack[temp]);
+        }
+    }
+    static void pop(){
+        if(temp<0){
+            System.out.println("Stack is Underflow !");
+        }else{
+            System.out.println("Pop element is\t"+stack[temp]);
+            temp = temp-1;
+        }
+    }
+    public static void main(String args[]) {
+     
+     Scanner sc = new Scanner(System.in);
+     String s = sc.nextLine();
+     
+     char[] c = s.toCharArray();
+     
+     for(char c1:c){
+          push(c1);
+     }
+    for(int j=temp;j>=0;j--){
+     pop();
+    }
+    }
+}
